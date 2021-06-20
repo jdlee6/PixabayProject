@@ -22,7 +22,12 @@ Make sure the following are installed
 ### 2. Change directory into the repo's folder
    `cd PixabayProject`
 
-### 3. Install the dependencies
+### 3. Set environment variables
+   `cd PixabayProject && touch .env`
+   #### a. Set your environment variables by writing them to the .env file you created
+   `API_KEY=YOUR_API_KEY`
+   `PIXABAY_URL=https://pixabay.com/api/?key=`
+### 4. Install the dependencies
    `npm install`
 
 ## Running on Local Server

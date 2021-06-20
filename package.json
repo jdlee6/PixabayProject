@@ -13,6 +13,7 @@
     "axios": "^0.21.1",
     "native-base": "^2.15.2",
     "react-native": "0.64",
+    "react-native-dotenv": "^2.5.5",
     "react-router-native": "^5.2.0"
   },
   "devDependencies": {

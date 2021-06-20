@@ -4,18 +4,20 @@ import SearchBar from "../../components/search-bar";
 import axios from 'axios';
 import { Link } from "react-router-native";
 import { PIXABAY_URL, API_TOKEN } from '../../constants.js';
+import envs from "../../config/env";
 
 const ImageSearch = () => {
   const [text, setText] = useState('');
   const [displayImages, setDisplayImages] = useState(false);
   const [imageObjects, setImageObjects] = useState([]);
+  const { API_KEY, PIXABAY_URL } = envs;
 
   const handleChange = (text) => {
     setText(text)
   };
 
   const handleSubmit = async () => {
-    const url = `${PIXABAY_URL}${API_TOKEN}&q=${text}s&image_type=photo`
+    const url = `${PIXABAY_URL}${API_KEY}&q=${text}s&image_type=photo`
     const result = await axios.get(url);
     setImageObjects(result.data.hits);
     setDisplayImages(true);
