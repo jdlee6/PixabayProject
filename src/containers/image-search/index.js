@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, Image, TouchableHighlight } from "react-native"
 import SearchBar from "../../components/search-bar";
 import axios from 'axios';
 import { Link } from "react-router-native";
+import { PIXABAY_URL, API_TOKEN } from '../../constants.js';
 
 const ImageSearch = () => {
   const [text, setText] = useState('');
@@ -14,7 +15,8 @@ const ImageSearch = () => {
   };
 
   const handleSubmit = async () => {
-    const result = await axios.get(`https://pixabay.com/api/?key=22154655-2ce07437c0a2d6e3e59d94219&q=${text}s&image_type=photo`);
+    const url = `${PIXABAY_URL}${API_TOKEN}&q=${text}s&image_type=photo`
+    const result = await axios.get(url);
     setImageObjects(result.data.hits);
     setDisplayImages(true);
   };
@@ -28,7 +30,7 @@ const ImageSearch = () => {
       <View style={styles.container}>
         {displayImages ? (
           imageObjects.map(image => (
-            <View style={styles.item}>
+            <View key={image.id} style={styles.item}>
             <Link to={{
               pathname: `/image/${image.id}`,
               state: {
