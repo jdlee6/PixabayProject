@@ -3,17 +3,13 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
   View,
 } from 'react-native';
-
-import { BackButton, NativeRouter, Route, Link } from "react-router-native";
+import { NativeRouter, Route } from "react-router-native";
 import ImageSearch from './containers/image-search';
 import ImageDetail from './containers/image-detail';
 
-const Routes: () => Node = () => {
+const Routes = () => {
   return (
     <NativeRouter>
       <SafeAreaView>

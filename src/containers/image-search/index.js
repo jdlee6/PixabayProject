@@ -4,18 +4,6 @@ import SearchBar from "../../components/search-bar";
 import axios from 'axios';
 import { Link } from "react-router-native";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'flex-start' // if you want to fill rows left to right
-  },
-  item: {
-    width: '50%' // is 50% of container width
-  }
-})
-
 const ImageSearch = () => {
   const [text, setText] = useState('');
   const [displayImages, setDisplayImages] = useState('');
@@ -31,13 +19,10 @@ const ImageSearch = () => {
     setDisplayImages(true);
   };
 
-  console.log(imageObjects);
-
-
   return (
     <>
       <View>
-        <Text>Pixabay Search</Text>
+        <Text style={styles.headline}>Pixabay Search</Text>
         <SearchBar text={text} handleChange={handleChange} handleSubmit={handleSubmit}/>
       </View> 
       <View style={styles.container}>
@@ -48,7 +33,8 @@ const ImageSearch = () => {
               pathname: `/image/${image.id}`,
               state: {
                 imageURL: `${image.largeImageURL}`,
-                user: `${image.user}`
+                user: `${image.user}`,
+                tags: `${image.tags}`
               }
             }}>
             <Image source = {{uri: image.previewURL}}
@@ -62,5 +48,24 @@ const ImageSearch = () => {
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start' 
+  },
+  item: {
+    width: '50%'
+  },
+   headline: {
+    textAlignVertical: 'center',
+    fontWeight: 'bold',
+    fontSize: 32,
+    width: '100%',
+    textAlign: 'center'
+  }
+});
 
 export default ImageSearch;
