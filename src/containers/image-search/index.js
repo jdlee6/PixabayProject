@@ -32,18 +32,16 @@ const ImageSearch = () => {
         {displayImages ? (
           imageObjects.map(image => (
             <View key={image.id} style={styles.item}>
-            <Link to={{
-              pathname: `/image/${image.id}`,
-              state: {
-                imageURL: `${image.largeImageURL}`,
-                user: `${image.user}`,
-                tags: `${image.tags}`
-              }
-            }}>
-            <Image source = {{uri: image.previewURL}}
-              style = {{ width: 200, height: 200 }}
-            />
-            </Link>
+              <Link to={{
+                pathname: `/image/${image.id}`,
+                state: {
+                  imageURL: `${image.largeImageURL}`,
+                  user: `${image.user}`,
+                  tags: `${image.tags}`
+                }
+              }}>
+                <Image source = {{uri: image.previewURL}} style = {{ width: 200, height: 200 }} />
+              </Link>
             </View>
           )
         )) : null}
