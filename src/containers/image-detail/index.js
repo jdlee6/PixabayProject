@@ -1,14 +1,20 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import { BackButton } from "react-router-native";
-
+import { View, Text, Image } from 'react-native';
+import { Link } from "react-router-native";
 
 const ImageDetail = (props) => {
+  const { imageURL, user } = props.location.state;
+
   return (
-    <View>
-      <BackButton />
-      <Text>Hello detail</Text>
-    </View>
+    <>
+      <Link to="/">
+        <Text>Back</Text>
+      </Link>
+      <View>
+        <Text>{user}</Text>
+        <Image source = {{uri: imageURL}} style = {{ width: 400, height: 400 }} />
+      </View>
+    </>
   )
 }
 
