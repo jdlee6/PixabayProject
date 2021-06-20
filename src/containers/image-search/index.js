@@ -3,7 +3,6 @@ import { Text, View, StyleSheet, Image, TouchableHighlight } from "react-native"
 import SearchBar from "../../components/search-bar";
 import axios from 'axios';
 import { Link } from "react-router-native";
-import { PIXABAY_URL, API_TOKEN } from '../../constants.js';
 import envs from "../../config/env";
 
 const ImageSearch = () => {
