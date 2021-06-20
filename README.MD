@@ -5,7 +5,7 @@
 > Take home project for ProPhone
 
 ## Demo
-<img src="https://imgur.com/b24Pe9H.gif">
+<img src="https://imgur.com/b24Pe9H.gif" width="300">
 
 ## Installation
 
