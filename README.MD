@@ -23,7 +23,7 @@ Make sure the following are installed
    `cd PixabayProject`
 
 ### 3. Set environment variables
-   `cd PixabayProject && touch .env`
+   `touch .env`
    #### a. Set your environment variables by writing them to the .env file you created
    `API_KEY=YOUR_API_KEY`
    `PIXABAY_URL=https://pixabay.com/api/?key=`
