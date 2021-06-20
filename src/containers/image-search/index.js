@@ -7,7 +7,7 @@ import { PIXABAY_URL, API_TOKEN } from '../../constants.js';
 
 const ImageSearch = () => {
   const [text, setText] = useState('');
-  const [displayImages, setDisplayImages] = useState('');
+  const [displayImages, setDisplayImages] = useState(false);
   const [imageObjects, setImageObjects] = useState([]);
 
   const handleChange = (text) => {
